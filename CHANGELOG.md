@@ -1,3 +1,2 @@
 ## 0.0.1
-
-* TODO: Describe initial release.
+First release of a pluralize utility for dart
