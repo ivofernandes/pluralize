@@ -31,30 +31,46 @@ class _MyHomePageState extends State<MyHomePage> {
   String _feedback = '';
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final word = _controller.text;
+
+    _feedback = Pluralize().isPlural(word)
+      ? 'The word $word is plural'
+      : 'The word $word is singular';
     return Scaffold(
       appBar: AppBar(
         title: const Text('Pluralize'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: _controller,
-            ),
-            MaterialButton(
-              onPressed: () {
-                setState(() {
-                  _feedback = Pluralize().isPlural(_controller.text)
-                      ? 'The word is plural'
-                      : 'The word is singular';
-                });
-              },
-              child: const Text('Check'),
-            ),
-            Text(_feedback),
-          ],
+      body: Container(
+        margin: const EdgeInsets.all(10),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                decoration: const InputDecoration(
+                  hintText: 'Enter a word',
+                ),
+                controller: _controller,
+                onChanged: (value) {
+                  setState(() {
+                  });
+                }
+              ),
+              const SizedBox(height: 20),
+              Text(_feedback),
+              const SizedBox(height: 20),
+              Text('The plural of $word is ${Pluralize().plural(word)}'),
+              const SizedBox(height: 20),
+              Text('The singular of $word is ${Pluralize().singular(word)}'),
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );

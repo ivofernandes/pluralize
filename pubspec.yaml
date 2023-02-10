@@ -1,11 +1,11 @@
 name: pluralize
-description: A new Flutter package to pluralize words
-version: 0.0.1
+description: A new Flutter package to check if a word is singular or plural, it can also convert words to plural or singular
+version: 0.0.3
 homepage: https://incaview.com
 repository: https://github.com/ivofernandes/pluralize
 
 environment:
-  sdk: '>=2.19.1 <3.0.0'
+  sdk: '>=2.19.0 <3.0.0'
   flutter: ">=1.17.0"
 
 dependencies:

@@ -3,17 +3,23 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:pluralize/pluralize.dart';
 
 void main() {
-  test('adds one to input values', () {
-    final pluralize = Pluralize();
+  test('Checks', () {
+    assert(Pluralize().isPlural('cats'));
+    assert(!Pluralize().isPlural('cat'));
+    assert(Pluralize().isPlural('dogs'));
+    assert(!Pluralize().isPlural('dog'));
+    assert(Pluralize().isSingular('dog'));
+  });
 
-    assert(pluralize.isPlural('cats'));
-    assert(!pluralize.isPlural('cat'));
-    assert(pluralize.isPlural('dogs'));
-    assert(!pluralize.isPlural('dog'));
-    assert(pluralize.isSingular('dog'));
+  test('Plurals', () {
+    assert(Pluralize().plural('cat') == 'cats');
+    assert(Pluralize().plural('dog') == 'dogs');
+    assert(Pluralize().plural('bird') == 'birds');
+  });
 
-    assert(pluralize.plural('cat') == 'cats');
-    assert(pluralize.plural('dog') == 'dogs');
-    assert(pluralize.singular('bird') == 'bird');
+  test('Singular', () {
+    assert(Pluralize().singular('cats') == 'cat');
+    assert(Pluralize().singular('dogs') == 'dog');
+    assert(Pluralize().singular('birds') == 'bird');
   });
 }

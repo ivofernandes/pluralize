@@ -17,7 +17,7 @@ mixin PluralizeUtils {
     }
 
     if (word[0] == word[0].toUpperCase()) {
-      return "${token[0].toUpperCase()}${token.substring(1).toLowerCase()}";
+      return '${token[0].toUpperCase()}${token.substring(1).toLowerCase()}';
     }
 
     return token.toLowerCase();
@@ -25,11 +25,11 @@ mixin PluralizeUtils {
 
   /// Interpolate a regexp string.
   String interpolate(String str, List<String> args) {
-    RegExp exp = RegExp(r"\$(\d{1,2})");
+    final RegExp exp = RegExp(r'\$(\d{1,2})');
     return str.replaceAllMapped(exp, (match) {
       final matchedText = match.group(1);
-      int index = int.parse(matchedText!);
-      return args.length > index ? args[index] : "";
+      final int index = int.parse(matchedText!);
+      return args.length > index ? args[index] : '';
     });
   }
 
@@ -37,9 +37,9 @@ mixin PluralizeUtils {
   String replace(String word, List<dynamic> rule) {
     // Use the first element of the rule as a RegExp to match in the word.
     // The second element of the rule is used as a string to replace the match.
-    return word.replaceFirstMapped(rule[0], (match) {
+    return word.replaceFirstMapped(rule[0] as RegExp, (match) {
       // Interpolate the replacement string using arguments from the match.
-      String result = interpolate(rule[1], match.groups([match.groupCount]).map((e) => e!).toList());
+      String result = interpolate(rule[1] as String, match.groups([match.groupCount]).map((e) => e!).toList());
 
       // If the match is an empty string, use the previous character of the word.
       if (match.group(0)!.isEmpty) {

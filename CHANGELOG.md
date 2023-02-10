@@ -1,2 +1,10 @@
-## 0.0.1
+## 0.0.1 11/02/2023
 First release of a pluralize utility for dart
+
+## 0.0.2
+Retry on pub publish
+
+## 0.0.3
+Added uncountable data
+
+
