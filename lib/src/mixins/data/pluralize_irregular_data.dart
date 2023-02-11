@@ -1,8 +1,7 @@
-
-mixin PluralizeIrregularData {
+class PluralizeIrregularData {
 
   /// Irregular rules.
-  final irregularRulesData = [
+  static List<List<String>> irregularRulesData = [
     // Pronouns.
     ['I', 'we'],
     ['me', 'us'],

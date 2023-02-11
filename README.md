@@ -9,14 +9,14 @@ https://www.npmjs.com/package/pluralize
 - Check if a word is singular or plural.
 - Works with irregular words.
 - Works with uncountable words.
-![Pluralize demo](https://github.com/ivofernandes/pluralize/blob/main/doc/screenshot.png?raw=true)
+![Pluralize demo](https://raw.githubusercontent.com/ivofernandes/pluralize/main/doc/screenshot.png)
 
 
 ## Getting Started
 Add the dependency to your `pubspec.yaml` file.
 
 ```
-pluralize: ^0.0.3
+pluralize: ^0.0.4
 ```
 
 ## Usage

@@ -7,4 +7,5 @@ Retry on pub publish
 ## 0.0.3
 Added uncountable data
 
-
+## 0.0.4
+Improved usability by hiding internal classes

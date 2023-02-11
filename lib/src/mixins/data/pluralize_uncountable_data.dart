@@ -1,6 +1,6 @@
-mixin PluralizeUncountableData {
+class PluralizeUncountableData {
 // Uncountable rules
-  final uncountableRulesData = [
+  static List<dynamic> uncountableRulesData = [
     'adulthood',
     'advice',
     'agenda',

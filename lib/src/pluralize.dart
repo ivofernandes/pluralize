@@ -4,12 +4,7 @@ import 'package:pluralize/src/mixins/data/pluralize_singular_data.dart';
 import 'package:pluralize/src/mixins/data/pluralize_uncountable_data.dart';
 import 'package:pluralize/src/mixins/pluralize_utils.dart';
 
-class Pluralize with
-    PluralizeUtils,
-    PluralizeUncountableData,
-    PluralizeSingularData,
-    PluralizePluralData,
-    PluralizeIrregularData {
+class Pluralize {
   static final Pluralize _instance = Pluralize._internal();
   factory Pluralize() => _instance;
   Pluralize._internal(){
@@ -38,7 +33,7 @@ class Pluralize with
 
       final regexp = rule[0] as RegExp;
       if (regexp.hasMatch(word)) {
-        return replace(word, rule);
+        return PluralizeUtils.replace(word, rule);
       }
     }
 
@@ -64,12 +59,12 @@ class Pluralize with
 
     // Check against the keep object map.
     if (keepMap.containsKey(token)) {
-      return restoreCase(word, token);
+      return PluralizeUtils.restoreCase(word, token);
     }
 
     // Check against the replacement map for a direct word replacement.
     if (replaceMap.containsKey(token)) {
-      return restoreCase(word, replaceMap[token]!);
+      return PluralizeUtils.restoreCase(word, replaceMap[token]!);
     }
 
     // Run all the rules against the word.
@@ -157,26 +152,26 @@ class Pluralize with
   }
 
   void initIrregularRules() {
-    for (final rule in irregularRulesData) {
+    for (final rule in PluralizeIrregularData.irregularRulesData) {
       addIrregularRule(rule[0], rule[1]);
     }
   }
 
   void initPluralRules() {
 
-    for(final regex in pluralRulesData.keys) {
-      addPluralRule(regex, pluralRulesData[regex]!);
+    for(final regex in PluralizePluralData.pluralRulesData.keys) {
+      addPluralRule(regex, PluralizePluralData.pluralRulesData[regex]!);
     }
   }
 
   void initSingularRules() {
-    for (final rule in singularRulesData) {
+    for (final rule in PluralizeSingularData.singularRulesData) {
       addSingularRule(rule[0], rule[1] as String);
     }
   }
 
   void initUncountableRules() {
-    for(final rule in uncountableRulesData) {
+    for(final rule in PluralizeUncountableData.uncountableRulesData) {
       addUncountableRule(rule);
     }
   }

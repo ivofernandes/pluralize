@@ -3,7 +3,7 @@ mixin PluralizeUtils {
 
   /// Pass in a word token to produce a function that can replicate the case on
   /// another word.
-  String restoreCase(String word, String token) {
+  static String restoreCase(String word, String token) {
     if (word == token) {
       return token;
     }
@@ -24,7 +24,7 @@ mixin PluralizeUtils {
   }
 
   /// Interpolate a regexp string.
-  String interpolate(String str, List<String> args) {
+  static String interpolate(String str, List<String> args) {
     final RegExp exp = RegExp(r'\$(\d{1,2})');
     return str.replaceAllMapped(exp, (match) {
       final matchedText = match.group(1);
@@ -34,7 +34,7 @@ mixin PluralizeUtils {
   }
 
   // Replace a word using a rule.
-  String replace(String word, List<dynamic> rule) {
+  static String replace(String word, List<dynamic> rule) {
     // Use the first element of the rule as a RegExp to match in the word.
     // The second element of the rule is used as a string to replace the match.
     return word.replaceFirstMapped(rule[0] as RegExp, (match) {

@@ -1,6 +1,5 @@
-mixin PluralizePluralData{
-
-  Map<RegExp, String> pluralRulesData = {
+class PluralizePluralData{
+  static Map<RegExp, String> pluralRulesData = {
     RegExp(r's?$', caseSensitive: false): 's',
     RegExp('[^\u0000-\u007F]\$', caseSensitive: false): r'$0',
     RegExp(r'([^aeiou]ese)$', caseSensitive: false): r'$1',

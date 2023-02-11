@@ -1,5 +1,5 @@
-mixin PluralizeSingularData{
-  List<List<dynamic>> singularRulesData = [
+class PluralizeSingularData{
+  static List<List<dynamic>> singularRulesData = [
     [
       RegExp(r's$', caseSensitive: false), '',
       RegExp(r'(ss)$', caseSensitive: false), r'$1',
