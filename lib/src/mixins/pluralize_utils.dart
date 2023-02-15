@@ -35,11 +35,16 @@ mixin PluralizeUtils {
 
   // Replace a word using a rule.
   static String replace(String word, List<dynamic> rule) {
+
+    final regex = rule[0] as RegExp;
+
     // Use the first element of the rule as a RegExp to match in the word.
     // The second element of the rule is used as a string to replace the match.
-    return word.replaceFirstMapped(rule[0] as RegExp, (match) {
+    return word.replaceFirstMapped(regex, (match) {
       // Interpolate the replacement string using arguments from the match.
-      String result = interpolate(rule[1] as String, match.groups([match.groupCount]).map((e) => e!).toList());
+
+      final args = match.groups([match.groupCount]).map((e) => e!).toList();
+      final String result = interpolate(rule[1] as String, args);
 
       // If the match is an empty string, use the previous character of the word.
       if (match.group(0)!.isEmpty) {

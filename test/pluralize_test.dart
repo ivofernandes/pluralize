@@ -12,9 +12,17 @@ void main() {
   });
 
   test('Plurals', () {
-    assert(Pluralize().plural('cat') == 'cats');
-    assert(Pluralize().plural('dog') == 'dogs');
-    assert(Pluralize().plural('bird') == 'birds');
+    final Map<String,String> plurals = {
+      'cat': 'cats',
+      'dog': 'dogs',
+      'bird': 'birds',
+    };
+
+    for(String singular in plurals.keys) {
+      final generatedPlural = Pluralize().plural(singular);
+      print('singular: $singular plural expected: ${plurals[singular]} vs $generatedPlural generated');
+      assert(generatedPlural == plurals[singular]);
+    }
   });
 
   test('Singular', () {
