@@ -1,4 +1,6 @@
 
+import 'dart:math';
+
 mixin PluralizeUtils {
 
   /// Pass in a word token to produce a function that can replicate the case on
@@ -37,17 +39,21 @@ mixin PluralizeUtils {
   static String replace(String word, List<dynamic> rule) {
 
     final regex = rule[0] as RegExp;
+    print('regex: $regex');
 
     // Use the first element of the rule as a RegExp to match in the word.
     // The second element of the rule is used as a string to replace the match.
     return word.replaceFirstMapped(regex, (match) {
       // Interpolate the replacement string using arguments from the match.
 
-      final args = match.groups([match.groupCount]).map((e) => e!).toList();
+      final groups = match.groups([match.groupCount]);
+
+      final args = groups.map((e) => e!).toList();
+      final group = match.group(0);
       final String result = interpolate(rule[1] as String, args);
 
       // If the match is an empty string, use the previous character of the word.
-      if (match.group(0)!.isEmpty) {
+      if (group!.isEmpty) {
         return restoreCase(word[match.start - 1], result);
       }
       // Otherwise, use the match as the source to restore the case.

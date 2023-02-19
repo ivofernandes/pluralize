@@ -3,6 +3,12 @@ Pluralize and singularize any word.
 This package is an adaptation of this pluralize npm package for dart.
 https://www.npmjs.com/package/pluralize
 
+## Process of creating the package
+If you are interested in creating flutter packages,
+I have documented the process of creating this package in this videos:
+https://youtu.be/pVZCmgdxin8
+https://youtu.be/Bgsn4zodmko
+
 ## Features
 
 - Pluralize and singularize any word.
@@ -10,6 +16,7 @@ https://www.npmjs.com/package/pluralize
 - Works with irregular words.
 - Works with uncountable words.
 ![Pluralize demo](https://raw.githubusercontent.com/ivofernandes/pluralize/main/doc/screenshot.png)
+
 
 
 ## Getting Started
@@ -37,10 +44,6 @@ And isSingular and isPlural to check if a word is singular or plural.
     assert(pluralize.plural('dog') == 'dogs');
     assert(pluralize.singular('bird') == 'bird');
 ```
-
-## Process of creating the package
-I have documented the process of creating this package in this video:
-https://youtu.be/pVZCmgdxin8
 
 ## Contributing
 If you want to contribute to this project your PRs are welcome.

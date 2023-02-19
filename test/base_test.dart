@@ -1528,7 +1528,7 @@ void main() {
     'passerby': 'passersby',
   };
 
-  test(' basic plural', () {
+  test('basic plural', () {
     for(final singular in basicTests.keys){
       final plural = Pluralize().plural(singular);
       final expectedPlural = basicTests[singular];
@@ -1536,6 +1536,28 @@ void main() {
       print('singular: $singular | plural: $plural vs expectedPlural: $expectedPlural');
 
       assert(plural == expectedPlural);
+    }
+  });
+
+  test('group rules plural', () {
+    for(final singular in groupRulesTests.keys){
+      final plural = Pluralize().plural(singular);
+      final expectedPlural = groupRulesTests[singular];
+
+      print('singular: $singular | plural: $plural vs expectedPlural: $expectedPlural');
+
+      assert(plural == expectedPlural);
+    }
+  });
+
+  test('group rules singular', (){
+    for(final expectedSingular in groupRulesTests.keys){
+      final plural = basicTests[expectedSingular]!;
+      final singular = Pluralize().singular(plural);
+
+      print('plural: $plural | singular: $singular vs expectedSingular: $expectedSingular');
+
+      assert(plural == expectedSingular);
     }
   });
 
