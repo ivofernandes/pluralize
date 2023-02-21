@@ -6,7 +6,9 @@ https://www.npmjs.com/package/pluralize
 ## Process of creating the package
 If you are interested in creating flutter packages,
 I have documented the process of creating this package in this videos:
+
 https://youtu.be/pVZCmgdxin8
+
 https://youtu.be/Bgsn4zodmko
 
 ## Features
@@ -23,7 +25,7 @@ https://youtu.be/Bgsn4zodmko
 Add the dependency to your `pubspec.yaml` file.
 
 ```
-pluralize: ^0.0.4
+pluralize: ^0.0.6
 ```
 
 ## Usage

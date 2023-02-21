@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:pluralize/pluralize.dart';
@@ -18,7 +20,7 @@ void main() {
       'bird': 'birds',
     };
 
-    for(String singular in plurals.keys) {
+    for(final String singular in plurals.keys) {
       final generatedPlural = Pluralize().plural(singular);
       print('singular: $singular plural expected: ${plurals[singular]} vs $generatedPlural generated');
       assert(generatedPlural == plurals[singular]);

@@ -21,7 +21,6 @@ class PluralizePluralData{
     RegExp(r'(x|ch|ss|sh|zz)$', caseSensitive: false): r'$0es',
     RegExp(r'(matr|cod|mur|sil|vert|ind|append)(?:ix|ex)$', caseSensitive: false): r'$0ices',
     RegExp(r'\b((?:tit)?m|l)(?:ice|ouse)$', caseSensitive: false): r'$0ice',
-    RegExp(r'(pe)(?:rson|ople)$', caseSensitive: false): r'$0ople',
     RegExp(r'(child)(?:ren)?$', caseSensitive: false): r'$0ren',
     RegExp(r'eaux$', caseSensitive: false): r'$0',
     RegExp(r'm[ae]n$', caseSensitive: false): 'men',

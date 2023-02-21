@@ -12,3 +12,6 @@ Improved usability by hiding internal classes
 
 ## 0.0.5
 Now passing tests of more complex pluralization rules
+
+## 0.0.6
+Improved singular rules

@@ -1,6 +1,3 @@
-
-import 'dart:math';
-
 mixin PluralizeUtils {
 
   /// Pass in a word token to produce a function that can replicate the case on
@@ -39,7 +36,7 @@ mixin PluralizeUtils {
   static String replace(String word, List<dynamic> rule) {
 
     final regex = rule[0] as RegExp;
-    print('regex: $regex');
+    //print('regex: $regex');
 
     // Use the first element of the rule as a RegExp to match in the word.
     // The second element of the rule is used as a string to replace the match.

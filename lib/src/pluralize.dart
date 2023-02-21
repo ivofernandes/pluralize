@@ -72,7 +72,7 @@ class Pluralize {
 
   }
 
-  // Check if a word is part of the map.
+  /// Check if a word is part of the map.
   bool checkWord(
       Map<String, String> replaceMap,
       Map<String, String> keepMap,
@@ -124,9 +124,9 @@ class Pluralize {
   }
 
   ///Add an irregular word definition.
-  void addIrregularRule(String single, String plural) {
-    plural = plural.toLowerCase();
-    single = single.toLowerCase();
+  void addIrregularRule(String singleParam, String pluralParam) {
+    final plural = pluralParam.toLowerCase();
+    final single = singleParam.toLowerCase();
 
     _irregularSingles[single] = plural;
     _irregularPlurals[plural] = single;
@@ -144,6 +144,7 @@ class Pluralize {
     addSingularRule(word, r'$0');
   }
 
+  /// Initialize the collection of pluralization and singularization rules.
   void init() {
     initIrregularRules();
     initPluralRules();
@@ -158,15 +159,15 @@ class Pluralize {
   }
 
   void initPluralRules() {
-
     for(final regex in PluralizePluralData.pluralRulesData.keys) {
       addPluralRule(regex, PluralizePluralData.pluralRulesData[regex]!);
     }
   }
 
   void initSingularRules() {
-    for (final rule in PluralizeSingularData.singularRulesData) {
-      addSingularRule(rule[0], rule[1] as String);
+    for (final rule in PluralizeSingularData.singularRulesData.keys) {
+      final String replacement = PluralizeSingularData.singularRulesData[rule]!;
+      addSingularRule(rule, replacement);
     }
   }
 
