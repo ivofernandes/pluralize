@@ -25,7 +25,7 @@ https://youtu.be/Bgsn4zodmko
 Add the dependency to your `pubspec.yaml` file.
 
 ```
-pluralize: ^0.0.6
+pluralize: ^0.0.7
 ```
 
 ## Usage

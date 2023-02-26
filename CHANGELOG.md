@@ -15,3 +15,6 @@ Now passing tests of more complex pluralization rules
 
 ## 0.0.6
 Improved singular rules
+
+## 0.0.7
+Fix format issues

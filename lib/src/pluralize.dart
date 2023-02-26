@@ -7,7 +7,7 @@ import 'package:pluralize/src/mixins/pluralize_utils.dart';
 class Pluralize {
   static final Pluralize _instance = Pluralize._internal();
   factory Pluralize() => _instance;
-  Pluralize._internal(){
+  Pluralize._internal() {
     init();
   }
 
@@ -16,7 +16,6 @@ class Pluralize {
   final _uncountables = {};
   final _irregularPlurals = <String, String>{};
   final _irregularSingles = <String, String>{};
-
 
   /// Sanitize a word by passing in the word and sanitization rules.
   String sanitizeWord(String token, String word, List<List<dynamic>> rules) {
@@ -40,7 +39,6 @@ class Pluralize {
     return word;
   }
 
-
   /// Replace a word with the updated word.
   ///
   /// [replaceMap]  map of words to be replaced
@@ -48,12 +46,8 @@ class Pluralize {
   /// [rules]       List of rules to use for sanitization
   ///
   /// Returns a function that accepts a word and returns the updated word
-  String replaceWord(
-      Map<String, String> replaceMap,
-      Map<String, String> keepMap,
-      List<List<dynamic>> rules,
-      String word
-      ) {
+  String replaceWord(Map<String, String> replaceMap,
+      Map<String, String> keepMap, List<List<dynamic>> rules, String word) {
     // Get the correct token and case restoration functions.
     final token = word.toLowerCase();
 
@@ -69,17 +63,15 @@ class Pluralize {
 
     // Run all the rules against the word.
     return sanitizeWord(token, word, rules);
-
   }
 
   /// Check if a word is part of the map.
   bool checkWord(
-      Map<String, String> replaceMap,
-      Map<String, String> keepMap,
-      List<List<dynamic>> rules,
-      String word,
-      ) {
-
+    Map<String, String> replaceMap,
+    Map<String, String> keepMap,
+    List<List<dynamic>> rules,
+    String word,
+  ) {
     final token = word.toLowerCase();
 
     if (keepMap.containsKey(token)) {
@@ -94,24 +86,26 @@ class Pluralize {
 
   /// Pluralize or singularize a word based on the passed in count.
   String pluralize(String word, int count, bool inclusive) {
-    String pluralized = count == 1
-        ? singular(word) : plural(word);
+    final String pluralized = count == 1 ? singular(word) : plural(word);
 
     return (inclusive ? '$count ' : '') + pluralized;
   }
 
   /// Pluralize a word.
-  String plural(String word)=> replaceWord(_irregularSingles, _irregularPlurals, _pluralRules, word);
-
+  String plural(String word) =>
+      replaceWord(_irregularSingles, _irregularPlurals, _pluralRules, word);
 
   /// Check if a word is plural.
-  bool isPlural(String word)=> checkWord(_irregularSingles, _irregularPlurals, _pluralRules, word);
+  bool isPlural(String word) =>
+      checkWord(_irregularSingles, _irregularPlurals, _pluralRules, word);
 
   ///Singularize a word.
-  String singular(String word) => replaceWord(_irregularPlurals, _irregularSingles, _singularRules, word);
+  String singular(String word) =>
+      replaceWord(_irregularPlurals, _irregularSingles, _singularRules, word);
 
   ///Check if a word is singular.
-  bool isSingular(String word) => checkWord(_irregularPlurals, _irregularSingles, _singularRules, word);
+  bool isSingular(String word) =>
+      checkWord(_irregularPlurals, _irregularSingles, _singularRules, word);
 
   /// Add a pluralization rule to the collection.
   void addPluralRule(dynamic rule, String replacement) {
@@ -159,7 +153,7 @@ class Pluralize {
   }
 
   void initPluralRules() {
-    for(final regex in PluralizePluralData.pluralRulesData.keys) {
+    for (final regex in PluralizePluralData.pluralRulesData.keys) {
       addPluralRule(regex, PluralizePluralData.pluralRulesData[regex]!);
     }
   }
@@ -172,7 +166,7 @@ class Pluralize {
   }
 
   void initUncountableRules() {
-    for(final rule in PluralizeUncountableData.uncountableRulesData) {
+    for (final rule in PluralizeUncountableData.uncountableRulesData) {
       addUncountableRule(rule);
     }
   }

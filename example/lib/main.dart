@@ -40,8 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
     final word = _controller.text;
 
     _feedback = Pluralize().isPlural(word)
-      ? 'The word $word is plural'
-      : 'The word $word is singular';
+        ? 'The word $word is plural'
+        : 'The word $word is singular';
     return Scaffold(
       appBar: AppBar(
         title: const Text('Pluralize'),
@@ -53,15 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
-                decoration: const InputDecoration(
-                  hintText: 'Enter a word',
-                ),
-                controller: _controller,
-                onChanged: (value) {
-                  setState(() {
-                  });
-                }
-              ),
+                  decoration: const InputDecoration(
+                    hintText: 'Enter a word',
+                  ),
+                  controller: _controller,
+                  onChanged: (value) {
+                    setState(() {});
+                  }),
               const SizedBox(height: 20),
               Text(_feedback),
               const SizedBox(height: 20),

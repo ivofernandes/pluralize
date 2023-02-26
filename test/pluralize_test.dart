@@ -14,15 +14,16 @@ void main() {
   });
 
   test('Plurals', () {
-    final Map<String,String> plurals = {
+    final Map<String, String> plurals = {
       'cat': 'cats',
       'dog': 'dogs',
       'bird': 'birds',
     };
 
-    for(final String singular in plurals.keys) {
+    for (final String singular in plurals.keys) {
       final generatedPlural = Pluralize().plural(singular);
-      print('singular: $singular plural expected: ${plurals[singular]} vs $generatedPlural generated');
+      print(
+          'singular: $singular plural expected: ${plurals[singular]} vs $generatedPlural generated');
       assert(generatedPlural == plurals[singular]);
     }
   });

@@ -1,6 +1,6 @@
 name: pluralize
 description: A new Flutter package to check if a word is singular or plural, it can also convert words to plural or singular
-version: 0.0.6
+version: 0.0.7
 homepage: https://incaview.com
 repository: https://github.com/ivofernandes/pluralize
 

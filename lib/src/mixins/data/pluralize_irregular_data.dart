@@ -1,5 +1,4 @@
 class PluralizeIrregularData {
-
   /// Irregular rules.
   static List<List<String>> irregularRulesData = [
     // Pronouns.

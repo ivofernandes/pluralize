@@ -1,5 +1,4 @@
 mixin PluralizeUtils {
-
   /// Pass in a word token to produce a function that can replicate the case on
   /// another word.
   static String restoreCase(String word, String token) {
@@ -34,7 +33,6 @@ mixin PluralizeUtils {
 
   // Replace a word using a rule.
   static String replace(String word, List<dynamic> rule) {
-
     final regex = rule[0] as RegExp;
     //print('regex: $regex');
 
@@ -57,5 +55,4 @@ mixin PluralizeUtils {
       return restoreCase(match.group(0)!, result);
     });
   }
-
 }
