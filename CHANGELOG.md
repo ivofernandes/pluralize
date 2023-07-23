@@ -18,3 +18,6 @@ Improved singular rules
 
 ## 0.0.7
 Fix format issues
+
+## 0.0.8
+Dropped the unnecessary dependency on flutter

@@ -25,7 +25,7 @@ https://youtu.be/Bgsn4zodmko
 Add the dependency to your `pubspec.yaml` file.
 
 ```
-pluralize: ^0.0.7
+pluralize: ^0.0.8
 ```
 
 ## Usage
@@ -48,7 +48,9 @@ And isSingular and isPlural to check if a word is singular or plural.
 ```
 
 ## Contributing
-If you want to contribute to this project your PRs are welcome.
+If you want to contribute to this project your PRs are welcome here:
+
+https://github.com/ivofernandes/pluralize
 
 The tests are not covering all the possible cases, so if you want to add more tests, please do so.
 https://github.com/ivofernandes/pluralize/blob/main/test/pluralize_test.dart

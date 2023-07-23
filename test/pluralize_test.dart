@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print
 
-import 'package:flutter_test/flutter_test.dart';
 
 import 'package:pluralize/pluralize.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('Checks', () {
