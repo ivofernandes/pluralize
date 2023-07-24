@@ -1,8 +1,7 @@
 // ignore_for_file: avoid_print
 
-import 'package:test/test.dart';
-
 import 'package:pluralize/pluralize.dart';
+import 'package:test/test.dart';
 
 void main() {
   final Map<String, String> basicTests = {

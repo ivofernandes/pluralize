@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_print
 
-
 import 'package:pluralize/pluralize.dart';
 import 'package:test/test.dart';
 

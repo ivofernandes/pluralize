@@ -13,7 +13,7 @@ class Pluralize {
 
   final _pluralRules = <List<dynamic>>[];
   final _singularRules = <List<dynamic>>[];
-  final _uncountables = {};
+  final _uncountables = <String, bool>{};
   final _irregularPlurals = <String, String>{};
   final _irregularSingles = <String, String>{};
 
